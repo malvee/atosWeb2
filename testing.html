@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>ATOS Social Media</title>
+	<meta name = "viewport" content = "width= device-width, initial-scale=1.0">
+	<link href  = "css/bootstrap.min.css" rel = "stylesheet">
+	<link href  = "css/styles.css" rel = "stylesheet">
+	</head>
+	<body background= "background.jpg">
+		<div class = "navbar navbar-inverse navbar-static-top">
+			<div class = "container">
+
+			
+					<a href = "index.html" class = "navbar-brand" class = "active">
+					<img class = "navbar-brand" class = "active" style="padding: 0.5em;width: 5em; height: 3.8em; float: left; margin-top: -1.25em" src="logo.jpg">
+				</a>
+				
+				<a href = "team.html" class = "navbar-brand" class = "active">Team Presentation</a>
+				<a href = "cis-ucl-social-media/index.php" class = "navbar-brand" class = "active">Project</a>
+				<a href = "projectRequirement.html" class = "navbar-brand" class = "active">Project Requirements & Scope</a>
+				<a href = "research.html" class = "navbar-brand" class = "active">Research</a>
+				<a href = "prototypes.html" class = "navbar-brand" class = "active">Prototypes</a>
+				<a href = "ui.html" class = "navbar-brand" class = "active">UI</a>
+				<a href = "archive.html" class = "navbar-brand" class = "active">Archive</a>
+				<a href = "testing.html" class = "navbar-brand" class = "active">Testing</a>
+				<a href = "plans.html" class = "navbar-brand" class = "active">Plans</a>
+
+
+			</div>
+		</div>
+
+		 <div class = "container">
+        	<div class = "row">
+        		<div class = "col-lg-12">
+        			<div class = "panel panel-default">
+        				<div class = "panel-body">
+        					<div class ="page-header">
+        						<h3>Selenium<small>Posted on December 8,2014</small></h3> 
+        					</div>
+        					<h4>Introduction</h4>
+                			<p>Selenium is an open source Browser based Test Automation Software. It is a robust set of suite of tools which supports rapid development of test automation for web-based applications. It has support for many other languages than just HTML 5.</p>
+
+                			<p>The Selenium IDE is very user-friendly. It has execution commands, a record button and Web based test runner option. It also has reference and log tabs where user can see details about the  command currently being run and progress of the test respectively.</p>
+                			<h4>Genral Commands</h4>
+                			<ul>
+  						<li>cliking a link- click or clickAndWait commands</li>
+  						<li>entering values- type command</li>
+  						<li>selecting options from a drop-down listbox- select command</li>
+  						<li>click checkboxes or radio buttons- click command</li>
+						</ul>
+						<h4>How did we test?</h4>
+                			<p>First of all, Selenium IDE for Mozilla Firefox was installed. As soon as the localhost was fired up, the Selenium IDE started recording the sequence user's actions and clicks in the test suite. As a user, the team went through all use cases after which the test suite was run to start automated testing.</p>
+                		<h4>Errors & Debugging</h4>
+                			<ul>
+  						<li>timeout - The actual application was receiving a session timeout because the Sentiment Analysis API took too long to respond.</li>
+  						<li>The team fixed this error by manually colour coding the tweets if the call to Sentiment Analysis API takes too long.</li>
+						</ul>
+                            <h4>Testing Results</h4>
+                            <table style = "margin-bottom: 10em;"cellpadding="1" cellspacing="1" border="1">
+			<thead>
+				<tr><td rowspan="1" colspan="3">SeleniumTestWithoutButtons</td></tr>
+			</thead>		
+			<tbody>
+				<tr>
+					<td>open</td>
+					<td>/cis-ucl-social-media/</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>verifyText</td>
+					<td>//tr[6]/td</td>
+					<td>RT @RAIL: Unexpected pleasure at Peterborough - an A4 with 12 on. Stagecoach please note! http://t.co/CdBwibCH97</td>
+				</tr>
+				<tr>
+					<td>verifyElementPresent</td>
+					<td>//tr[15]/td</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>waitForText</td>
+					<td>link=Bad</td>
+					<td>Bad</td>
+				</tr>
+				<tr>
+					<td>verifyElementPresent</td>
+					<td>link=Good</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>verifyText</td>
+					<td>//tr[9]/td</td>
+					<td>RT @aquigley: Big Data Scotland Dec 9th http://t.co/MOi30aOxrx presenters inc. @PDForrest, @DataLabScotland, @Bull_UK, @atos, @brightsolid,â€¦</td>
+				</tr>
+				<tr>
+					<td>verifyElementPresent</td>
+					<td>link=All</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>verifyElementPresent</td>
+					<td>link=Neutral</td>
+					<td></td>
+				</tr>
+			</tbody>
+			</table>
+                      	</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+    	
+		
+			
+			
+		
+		<div class = "navbar navbar-inverse navbar-fixed-bottom">
+			<div class = "container">
+				<p class = "navbar-text pull-left">2014 Developed by ATOS 4 UCL Team<br>All Rights Reserved</p>
+			</div>
+		</div>
+
+
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+	</body>
+</html>

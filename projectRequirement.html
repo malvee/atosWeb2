@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>ATOS Social Media</title>
+	<meta name = "viewport" content = "width= device-width, initial-scale=1.0">
+	<link href  = "css/bootstrap.min.css" rel = "stylesheet">
+	<link href  = "css/styles.css" rel = "stylesheet">
+	</head>
+	<body background= "background.jpg">	
+		<div class = "navbar navbar-inverse navbar-static-top">
+			<div class = "container">
+<a href = "index.html" class = "navbar-brand" class = "active">
+					<img class = "navbar-brand" class = "active" style="padding: 0.5em;width: 5em; height: 3.8em; float: left; margin-top: -1.25em" src="logo.jpg">
+				</a>
+				
+				<a href = "team.html" class = "navbar-brand" class = "active">Team Presentation</a>
+				<a href = "cis-ucl-social-media/index.php" class = "navbar-brand" class = "active">Project</a>
+				<a href = "projectRequirement.html" class = "navbar-brand" class = "active">Project Requirements & Scope</a>
+				<a href = "research.html" class = "navbar-brand" class = "active">Research</a>
+				<a href = "prototypes.html" class = "navbar-brand" class = "active">Prototypes</a>
+				<a href = "ui.html" class = "navbar-brand" class = "active">UI</a>
+				<a href = "archive.html" class = "navbar-brand" class = "active">Archive</a>
+				<a href = "testing.html" class = "navbar-brand" class = "active">Testing</a>
+				<a href = "plans.html" class = "navbar-brand" class = "active">Plans</a>
+			</div>
+			
+		</div>
+
+		<div style = "margin-left: 5em; margin-right: 5em;">
+			<p style = "font-size: 2em"><ins><b>Project Scope:</b></ins></p>
+			
+			<p>
+				The aim of the entire project as specified by our client is to develop a product that can be configured to automatically route social media activity to the most appropriate person(s) and/or system(s) to enable a fast response. This action has been split into two phases and the scope of the first part of the project is to have a product that can pull in data from social media platforms, analyze that tweet and display only the type of tweets that the user in interested in seeing. Upon completion of this first phase in term-1, the system will be extended during term-2 to automatically route the information to appropiate personell within the system.
+
+				For term-1 we are expected to have an interface which will display the relevant tweets in real time from the moment the user logs into the system to 5 hours before the login. The user will be able to filter the displayed tweets via the three labels: Good, Bad, Neutral. 
+			</p>
+			
+			<p style = "font-size: 2em"><b><ins>Project Requirement:</b></ins></p>
+			<p> The requirements are presented in the format of a MOSCOW table which have been gathered from the client via the initial description of the project and bi-weekly meetings.  </p>
+			
+			<p style = "font-size: 1.5em"> MoSCOW </p>
+			<table border="1" style="width:75%; margin-left: auto; margin-right: auto; background-color: white;">
+  				<tr>
+			    <td style = "text-align: center;">Must Have</td>		
+			    </tr>
+			    <tr>
+			    <td><ul>
+					<li>Display the tweets relevant to the company</li>
+					<li>Label each tweet into three categories: Good, Bad or Neutral</li>
+					<li>Display relevant tweets within the last 5 hours</li>
+					<li>Filter tweets by their labels</li>
+ 				</ul>
+ 				</td> 
+ 				</tr>
+
+ 				<tr>
+			    <td style = "text-align: center;">Should Have</td>		
+			    </tr>
+ 				<tr>
+			    <td ><ul>
+					<li>Time filter to allow selection of the range of time from which the tweets will be displayed</li>
+					<li>Location filter to allow selection of the locations from which tweets will be shown</li>
+ 				</ul>
+ 				</td>
+ 				</tr>
+
+ 				<tr>
+			    <td style = "text-align: center;">Could Have</td>		
+			    </tr>
+ 				<tr>
+			    <td><ul>
+					<li>Retrieve posts from different social media sites such as Facebook, Instagram, Flickr</li>
+					<li>Sentiment of a user over a period of time</li>
+ 				</ul>
+ 				</td>
+ 				</tr>
+
+ 				<tr>
+			    <td style = "text-align: center;">Would Like to Have</td>		
+			    </tr>
+ 				<tr>
+			    <td><ul>
+					<li>Exact location filter to narrow the analysis on a specific station/platform</li>
+					<li>Reply to a specific tweet, this would need the user to be logged into their twitter account</li>
+					<li>Heat Map of areas corresponding to their sentiment density i.e. an area with a lot of negative tweets will have a deep red color and an area with positive seniment will have a green color </li>
+
+ 				</ul>
+ 				</td>
+ 				</tr>
+
+			  
+			</table>
+
+			<h3> Use Cases </h3>
+
+			<table border="1" style="width:75%; margin-left: auto; margin-right: auto; background-color: white;">
+			<tr> 
+			<td style = "text-align: center;"> ID</td>
+			<td style = "text-align: center;"> Event</td>
+			<td style = "text-align: center;"> Action</td>
+			<td style = "text-align: center;"> Additional Constraint</td>
+
+			</tr>
+
+			<tr> 
+			<td style = "text-align: center;"> 1</td>
+			<td style = "text-align: center;"> User logs into the system</td>
+			<td style = "text-align: center;"> The page automatically displays the current and previous tweets within the last 5 hours in a sorted order with the most recent tweet at the top. Tweets are displayed according to the time they were fetched</td>
+			<td style = "text-align: center;"> None</td>
+
+			</tr>
+
+			<tr> 
+			<td style = "text-align: center;"> 2</td>
+			<td style = "text-align: center;"> User Selects a Sentiment Label</td>
+			<td style = "text-align: center;"> The existing tweets are filtered to display only the tweets that have been fetched in the past 5 hours and has the specific sentiment label</td>
+			<td style = "text-align: center;"> None</td>
+
+			</tr>
+
+
+
+			</table>
+
+			<h3> Project Runtime </h3>
+			<p style = "margin-bottom: 10em">The Project is specified to run privately on the clients device such as a laptop or tablet. Bootstrap has been used to scale the application to the platform on which it is running but mostly the application is going to be run on a screen that can handle a native website's architecture. For this purpose the Linux OS has not been customized with additonal packages as the private web application is suited to the machine that it will be running on.<p>  
+
+
+			
+		</div>
+
+
+
+
+			
+			
+			
+
+		<div class = "navbar navbar-inverse navbar-fixed-bottom">
+			<div class = "container">
+				<p class = "navbar-text pull-left">2014 Developed by ATOS 4 UCL Team<br>All Rights Reserved</p>
+			</div>
+		</div>
+
+
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+	</body>
+</html>
