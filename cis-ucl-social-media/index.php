@@ -149,6 +149,7 @@ $twitter = new TwitterOAuth($consumer, $counsumerSecret, $accessToken, $accessTo
 					}
 					
 					$_SESSION["passed_array"] = $array;
+					echo "<p>Tweets Ready</p>";
 					?>
 		</tbody>
 		</table>
@@ -165,7 +166,7 @@ $twitter = new TwitterOAuth($consumer, $counsumerSecret, $accessToken, $accessTo
 			
 
 		</div>
-		<div class = "navbar navbar-inverse navbar-fixed-bottom">
+		<div class = "navbar navbar-inverse navbar-fixed-bottom" style = "margin-top:5em;">
 			<div class = "container">
 				<p class = "navbar-text pull-left">2014 Developed by ATOS-4 Proud Team<br>All Rights Reserved</p>
 			</div>
