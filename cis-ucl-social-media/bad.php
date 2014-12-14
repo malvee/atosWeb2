@@ -18,7 +18,7 @@ session_start();
 				</a>
 				
 				<a href = "../team.html" class = "navbar-brand" class = "active">Team Presentation</a>
-				<a href = "index.html" class = "navbar-brand" class = "active">Project</a>
+				<a href = "index.php" class = "navbar-brand" class = "active">Project</a>
 				<a href = "../projectRequirement.html" class = "navbar-brand" class = "active">Project Requirements & Scope</a>
 				<a href = "../research.html" class = "navbar-brand" class = "active">Research</a>
 				<a href = "../prototypes.html" class = "navbar-brand" class = "active">Prototypes</a>
