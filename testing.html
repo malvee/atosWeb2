@@ -37,95 +37,89 @@
         			<div class = "panel panel-default">
         				<div class = "panel-body">
         					<div class ="page-header">
-        						<h3>Testing <small>Posted on December 16,2014</small></h3> 
+        						<h3>Web Testing Checklist <small>Posted on December 16,2014</small></h3> 
         					</div>
-        					<h4>The web testing checklist consists of:</h4>
-                			<h5>1) Functionality Testing:<h5>
-							<p>Test for - all the links in web pages, database connection, forms used in the web pages for submitting or getting information from user, Cookie testing.<p>
-							<h5>Check all the links:<h5>	
-							<ul>
-  						<li>Test the outgoing links from all the pages from specific domain under test.</li>
-  						<li>Test all internal links.</li>
-  						<li>Test links jumping on the same pages.</li>
-  						<li>Test links used to send the email to admin or other users from web pages.</li>
-  						<li>Test to check if there are any orphan pages.</li>
-  						<li>Lastly in link checking, check for broken links in all above-mentioned links.</li>
-						</ul>
-						<h5>Test forms in all pages:</h5>
-						<p>Forms are the integral part of any web site. Forms are used to get information from users and to keep interaction with them. So what should be checked on these forms?</p>
-						<ul>
-  						<li>First check all the validations on each field.</li>
-  						<li>Check for the default values of fields.</li>
-  						<li>Wrong inputs to the fields in the forms.</li>
-  						<li>Options to create forms if any, form delete, view or modify the forms.</li>
-						</ul>
-						<p>Let's take example of the search engine project currently I am working on, In this project we have advertiser and affiliate signup steps. Each sign up step is different but dependent on other steps. So sign up flow should get executed correctly. There are different field validations like email Ids, User financial info validations. All these validations should get checked in manual or automated web testing.</p>
+                				<h4>1) Functionality Testing:<h4>
+								Test for - all the links in web pages, database connection, forms used in the web pages for submitting or getting information from user, Cookie testing.
+									<h5><b>Check all the links:</b><h5>	
+										<ul>
+  											<li>Test the outgoing links from all the pages from specific domain under test.</li>
+  											<li>Test all internal links.</li>
+  											<li>Test links jumping on the same pages.</li>
+  											<li>Test links used to send the email to admin or other users from web pages.</li>
+  											<li>Test to check if there are any orphan pages.</li>
+  											<li>Lastly in link checking, check for broken links in all above-mentioned links.</li>
+										</ul>
+									<h5>Test forms in all pages:</h5>
+									Forms are the integral part of any web site. Forms are used to get information from users and to keep interaction with them. So what should be checked on these forms?<br>
+										<ul>
+  											<li>First check all the validations on each field.</li>
+  											<li>Check for the default values of fields.</li>
+  											<li>Wrong inputs to the fields in the forms.</li>
+  											<li>Options to create forms if any, form delete, view or modify the forms.</li>
+										</ul>
+										Let's take example of the search engine project currently I am working on, In this project we have advertiser and affiliate signup steps. Each sign up step is different but dependent on other steps. So sign up flow should get executed correctly. There are different field validations like email Ids, User financial info validations. All these validations should get checked in manual or automated web testing.
+									<h5>Cookies testing:</h5>
+										Cookies are small files stored on user machine. These are basically used to maintain the session mainly login sessions. Test the application by enabling or disabling the cookies in your browser options. Test if the cookies are encrypted before writing to user machine. If you are testing the session cookies (i.e. cookies expire after the sessions ends) check for login sessions and user stats after session end. Check effect on application security by deleting the cookies. (I will soon write separate article on cookie testing)
+									<h5>Validate your HTML/CSS:</h5>
+										If you are optimizing your site for Search engines then HTML/CSS validation is very important. Mainly validate the site for HTML syntax errors. Check if site is crawlable to different search engines.
+									<h5>Database testing:</h5>
+										Data consistency is very important in web application. Check for data integrity and errors while you edit, delete, modify the forms or do any DB related functionality.<br>
+										Check if all the database queries are executing correctly, data is retrieved correctly and also updated correctly. More on database testing could be load on DB, we will address this in web load or performance testing below.
 
-						<h5>Cookies testing:</h5>
-						<p>Cookies are small files stored on user machine. These are basically used to maintain the session mainly login sessions. Test the application by enabling or disabling the cookies in your browser options. Test if the cookies are encrypted before writing to user machine. If you are testing the session cookies (i.e. cookies expire after the sessions ends) check for login sessions and user stats after session end. Check effect on application security by deleting the cookies. (I will soon write separate article on cookie testing)</p>
+								<h4>2) Usability Testing:</h4>
+									<h5>Test for navigation:</h5>
+										Navigation means how the user surfs the web pages, different controls like buttons, boxes or how user using the links on the pages to surf different pages.<br>
+										Usability testing includes:<br>
+										Web site should be easy to use. Instructions should be provided clearly. Check if the provided instructions are correct means whether they satisfy purpose.<br>
+										Main menu should be provided on each page. It should be consistent.
+									<h5>Content checking:</h5>
+										Content should be logical and easy to understand. Check for spelling errors. Use of dark colors annoys users and should not be used in site theme. You can follow some standards that are used for web page and content building. These are common accepted standards like as I mentioned above about annoying colors, fonts, frames etc.<br>
+										Content should be meaningful. All the anchor text links should be working properly. Images should be placed properly with proper sizes.These are some basic standards that should be followed in web development. Your task is to validate all for UI testing
+									<h5>Other user information for user help:</h5>
+										Like search option, sitemap, help files etc. Sitemap should be present with all the links in web sites with proper tree view of navigation. Check for all links on the sitemap.<br>
+										"Search in the site" option will help users to find content pages they are looking for easily and quickly. These are all optional items and if present should be validated.
 
-						<h5>Validate your HTML/CSS:</h5>
-						<p>If you are optimizing your site for Search engines then HTML/CSS validation is very important. Mainly validate the site for HTML syntax errors. Check if site is crawlable to different search engines.</p>
+								<h4>3) Interface Testing:</h4>	
+									The main interfaces are:<br>
+									Web server and application server interface<br>
+									Application server and Database server interface.<br>
+									Check if all the interactions between these servers are executed properly. Errors are handled properly. If database or web server returns any error message for any query by application server then application server should catch and display these error messages appropriately to users. Check what happens if user interrupts any transaction in-between? Check what happens if connection to web server is reset in between?
 
-						<h5>Database testing:</h5>
-						<p>Data consistency is very important in web application. Check for data integrity and errors while you edit, delete, modify the forms or do any DB related functionality.</p>
-						<p>Check if all the database queries are executing correctly, data is retrieved correctly and also updated correctly. More on database testing could be load on DB, we will address this in web load or performance testing below.</p>
+								<h4>4) Compatibility Testing:</h4>
+									Compatibility of your web site is very important testing aspect. See which compatibility test to be executed:<br>
+									<h5>Browser compatibility:</h5>
+										In my web-testing career I have experienced this as most influencing part on web site testing.<br>
+										Some applications are very dependent on browsers. Different browsers have different configurations and settings that your web page should be compatible with. Your web site coding should be cross browser platform compatible. If you are using java scripts or AJAX calls for UI functionality, performing security checks or validations then give more stress on browser compatibility testing of your web application.<br>
+										Test web application on different browsers like Internet explorer, Firefox, Netscape navigator, AOL, Safari, Opera browsers with different versions.<br>
+									<h5>OS compatibility:</h5>
+										Some functionality in your web application is may not be compatible with all operating systems. All new technologies used in web development like graphics designs, interface calls like different API’s may not be available in all Operating Systems.<br>
+										Test your web application on different operating systems like Windows, Unix, MAC, Linux, Solaris with different OS flavors.
+									<h5>Mobile browsing:</h5>
+										This is new technology age. So in future Mobile browsing will rock. Test your web pages on mobile browsers. Compatibility issues may be there on mobile.
+									<h5>Printing options:</h5>
+										If you are giving page-printing options then make sure fonts, page alignment, page graphics getting printed properly. Pages should be fit to paper size or as per the size mentioned in printing option.
 
-						<h5>2) Usability Testing:</h5>
-						<h5>Test for navigation:</h5>
-						<p>Navigation means how the user surfs the web pages, different controls like buttons, boxes or how user using the links on the pages to surf different pages.</p>
-						<p>Usability testing includes:</p>
-						<p>Web site should be easy to use. Instructions should be provided clearly. Check if the provided instructions are correct means whether they satisfy purpose.</p>
-						<p>Main menu should be provided on each page. It should be consistent.</p>
+								<h4>5) Performance testing:</h4>
+										Web application should sustain to heavy load. Web performance testing should include:<br>
+										Web Load Testing<br>
+										Web Stress Testing<br><br>
+										Test application performance on different internet connection speed.In web load testing test if many users are accessing or requesting the same page. Can system sustain in peak load times? Site should handle many simultaneous user requests, large input data from users, Simultaneous connection to DB, heavy load on specific pages etc.<br>
+										Stress testing: Generally stress means stretching the system beyond its specification limits. Web stress testing is performed to break the site by giving stress and checked how system reacts to stress and how system recovers from crashes.
+										Stress is generally given on input fields, login and sign up areas.<br>
+										In web performance testing web site functionality on different operating systems, different hardware platforms is checked for software, hardware memory leakage errors,<br>
 
-						<h5>Content checking:</h5>
-						<p>Content should be logical and easy to understand. Check for spelling errors. Use of dark colors annoys users and should not be used in site theme. You can follow some standards that are used for web page and content building. These are common accepted standards like as I mentioned above about annoying colors, fonts, frames etc.</p>
-						<p>Content should be meaningful. All the anchor text links should be working properly. Images should be placed properly with proper sizes.These are some basic standards that should be followed in web development. Your task is to validate all for UI testing</p>
-
-						<h5>Other user information for user help:</h5>
-						<p>Like search option, sitemap, help files etc. Sitemap should be present with all the links in web sites with proper tree view of navigation. Check for all links on the sitemap.</p>
-						<p>"Search in the site" option will help users to find content pages they are looking for easily and quickly. These are all optional items and if present should be validated.</p>
-
-						<h5>3) Interface Testing:</h5>	
-						<p>The main interfaces are:</p>
-						<p>Web server and application server interface</p>
-						<p>Application server and Database server interface.</p>
-						<p>Check if all the interactions between these servers are executed properly. Errors are handled properly. If database or web server returns any error message for any query by application server then application server should catch and display these error messages appropriately to users. Check what happens if user interrupts any transaction in-between? Check what happens if connection to web server is reset in between?</p>
-
-						<h5>4) Compatibility Testing:</h5>
-						<p>Compatibility of your web site is very important testing aspect. See which compatibility test to be executed:</p>
-						<h5>Browser compatibility:</h5>
-						<p>In my web-testing career I have experienced this as most influencing part on web site testing.</p>
-						<p>Some applications are very dependent on browsers. Different browsers have different configurations and settings that your web page should be compatible with. Your web site coding should be cross browser platform compatible. If you are using java scripts or AJAX calls for UI functionality, performing security checks or validations then give more stress on browser compatibility testing of your web application.</p>
-						<p>Test web application on different browsers like Internet explorer, Firefox, Netscape navigator, AOL, Safari, Opera browsers with different versions.</p>
-						<h5>OS compatibility:</h5>
-						<p>Some functionality in your web application is may not be compatible with all operating systems. All new technologies used in web development like graphics designs, interface calls like different API’s may not be available in all Operating Systems.</p>
-						<p>Test your web application on different operating systems like Windows, Unix, MAC, Linux, Solaris with different OS flavors.</p>
-						<h5>Mobile browsing:</h5>
-						<p>This is new technology age. So in future Mobile browsing will rock. Test your web pages on mobile browsers. Compatibility issues may be there on mobile.</p>
-						<h5>Printing options:</h5>
-						<p>If you are giving page-printing options then make sure fonts, page alignment, page graphics getting printed properly. Pages should be fit to paper size or as per the size mentioned in printing option.</p>
-
-						<h5>5) Performance testing:</h5>
-						Web application should sustain to heavy load. Web performance testing should include:<br>
-						Web Load Testing<br>
-						Web Stress Testing<br><br>
-						<p>Test application performance on different internet connection speed.In web load testing test if many users are accessing or requesting the same page. Can system sustain in peak load times? Site should handle many simultaneous user requests, large input data from users, Simultaneous connection to DB, heavy load on specific pages etc.</p>
-						Stress testing: Generally stress means stretching the system beyond its specification limits. Web stress testing is performed to break the site by giving stress and checked how system reacts to stress and how system recovers from crashes.
-						<p>Stress is generally given on input fields, login and sign up areas.</p>
-						In web performance testing web site functionality on different operating systems, different hardware platforms is checked for software, hardware memory leakage errors,<br>
-
-						<h5>6) Security Testing:</h5>
-						<p>Following are some test cases for web security testing:</p>
-						<ul>
-  						<li>Test by pasting internal url directly into browser address bar without login. Internal pages should not open.</li>
-  						<li>If you are logged in using username and password and browsing internal pages then try changing url options directly. I.e. If you are checking some publisher site statistics with publisher site ID= 123. Try directly changing the url site ID parameter to different site ID which is not related to logged in user. Access should denied for this user to view others stats.</li>
-  						<li>Try some invalid inputs in input fields like login username, password, input text boxes. Check the system reaction on all invalid inputs.</li>
-  						<li>Web directories or files should not be accessible directly unless given download option.</li>
-  						<li>Test the CAPTCHA for automates scripts logins.</li>
-  						<li>Test if SSL is used for security measures. If used proper message should get displayed when user switch from non-secure http:// pages to secure https:// pages and vice versa.</li>
-  						<li>All transactions, error messages, security breach attempts should get logged in log files somewhere on web server.</li>
-						</ul>
+								<h4>6) Security Testing:</h4>
+										Following are some test cases for web security testing:<br>
+											<ul>
+  												<li>Test by pasting internal url directly into browser address bar without login. Internal pages should not open.</li>
+  												<li>If you are logged in using username and password and browsing internal pages then try changing url options directly. I.e. If you are checking some publisher site statistics with publisher site ID= 123. Try directly changing the url site ID parameter to different site ID which is not related to logged in user. Access should denied for this user to view others stats.</li>
+  												<li>Try some invalid inputs in input fields like login username, password, input text boxes. Check the system reaction on all invalid inputs.</li>
+  												<li>Web directories or files should not be accessible directly unless given download option.</li>
+  												<li>Test the CAPTCHA for automates scripts logins.</li>
+  												<li>Test if SSL is used for security measures. If used proper message should get displayed when user switch from non-secure http:// pages to secure https:// pages and vice versa.</li>
+  												<li>All transactions, error messages, security breach attempts should get logged in log files somewhere on web server.</li>
+											</ul>
 						</div>
         			</div>
         		</div>
@@ -211,7 +205,7 @@
         		</div>
         	</div>
         </div>
-		
+
 			
 			
 		
