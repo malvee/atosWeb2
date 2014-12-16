@@ -31,7 +31,7 @@
 
 		
         
-		<div class = "container">
+		<div class = "container" margin-bottom = "10px">
         	<div class = "row">
         		<div class = "col-lg-12">
         			<div class = "panel panel-default">
@@ -126,7 +126,7 @@
         	</div>
         </div>
 
-         <div class = "container">
+         <div class = "container" style = "margin-bottom: 5em;">
         	<div class = "row">
         		<div class = "col-lg-12">
         			<div class = "panel panel-default">
@@ -151,55 +151,10 @@
                 			<ul>
   						<li>timeout - The actual application was receiving a session timeout because the Sentiment Analysis API took too long to respond.</li>
   						<li>The team fixed this error by manually colour coding the tweets if the call to Sentiment Analysis API takes too long.</li>
+  						<li>There were a lot of hyperlink errors found during testing.</li>
 						</ul>
                             <h4>Testing Results</h4>
-                            <table style = "margin-bottom: 10em;"cellpadding="1" cellspacing="1" border="1">
-			<thead>
-				<tr><td rowspan="1" colspan="3">SeleniumTestWithoutButtons</td></tr>
-			</thead>		
-			<tbody>
-				<tr>
-					<td>open</td>
-					<td>/cis-ucl-social-media/</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>verifyText</td>
-					<td>//tr[6]/td</td>
-					<td>RT @RAIL: Unexpected pleasure at Peterborough - an A4 with 12 on. Stagecoach please note! http://t.co/CdBwibCH97</td>
-				</tr>
-				<tr>
-					<td>verifyElementPresent</td>
-					<td>//tr[15]/td</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>waitForText</td>
-					<td>link=Bad</td>
-					<td>Bad</td>
-				</tr>
-				<tr>
-					<td>verifyElementPresent</td>
-					<td>link=Good</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>verifyText</td>
-					<td>//tr[9]/td</td>
-					<td>RT @aquigley: Big Data Scotland Dec 9th http://t.co/MOi30aOxrx presenters inc. @PDForrest, @DataLabScotland, @Bull_UK, @atos, @brightsolid,â€¦</td>
-				</tr>
-				<tr>
-					<td>verifyElementPresent</td>
-					<td>link=All</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>verifyElementPresent</td>
-					<td>link=Neutral</td>
-					<td></td>
-				</tr>
-			</tbody>
-			</table>
+                           		<p>Here is a link to the comprehensive testing carried out using Selenium: <a href="selenium-results.html">Selenium Complete Test</a></p>      
                       	</div>
         			</div>
         		</div>
