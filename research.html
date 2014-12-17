@@ -29,71 +29,59 @@
 			
 		</div>
 
-		<div id="marginlength">
-			<p>
-				<ins>Research - Topics searched and found:</ins>
-			</p>
-			<p>
-				<ol>
-					<li><font size="5">APIs</font> - APIs for various social platforms were identified in the first sprint. They all support HTTP REST protocol so that any programming language can make and retrieve requests. <br>
-						<ul>
-							<li>
-								<font size="4">Twitter</font> - The Twitter micro-blogging service provides two RESTful APIs. The Twitter REST API methods allow developers to access core Twitter data. This includes update timelines, status data and user information. The search API methods allow developers to interact with Twitter search and trends data. The APIs currently support following data formats: XML, JSON, RSS and the Atom syndication formats. The four main objects that are encountered in the API are Tweets, Users, Entities and Places. Resources were identified for various programming languages:
+		
+		<div class = "col-lg-10" style = "margin-left: 5em; margin-right: 5em;">
+			
+				<h1>Research - Topics searched and found:</h1>
+			
+					<ol>
+					<h2>APIs</h2>
+					APIs for various social platforms were identified in the first sprint. They all support HTTP REST protocol so that any programming language can make and retrieve requests.<br>
+							<ol>
+								<h3>Twitter</h3> The Twitter micro-blogging service provides two RESTful APIs. The Twitter REST API methods allow developers to access core Twitter data. This includes update timelines, status data and user information. The search API methods allow developers to interact with Twitter search and trends data. The APIs currently support following data formats: XML, JSON, RSS and the Atom syndication formats. The four main objects that are encountered in the API are Tweets, Users, Entities and Places. Resources were identified for various programming languages:
  								<ul>
  									<li>Java - hbc library, temboo library</li>
  									<li>C++ - twirlcurl</li>
  									<li>JavaScript/Node.js - twitterJSclient library</li>
  								</ul>
-							</li>
-							<li>
-								<font size="4">Facebook</font> - The Facebook API is a platform for building applications available to the members of this social network. The API allows applications to become more user-centered by publishing activities to news feed and user profile by using social connections and profile information (SUBJECT TO USER PRIVACY SETTINGS). Users can add social context to applications by utilizing profile, friends, page, group, photo and event data. The API uses RESTful protocol and responses are localized in XML format. 
-							</li>
-							<li>
-								<font size="4">Youtube</font> -  The problem with Youtube is it does not have hashtag searching so searches cannot be made on comments or video description. Only the basic keyword youtube search can be done which returns a list of videos with best match. Youtube has two relavant APIs : Data API and Analytics API. The YouTube Data API (v3) lets incorporate YouTube functionality into own application. The API can be used to fetch search results and to retrieve, insert, update, and delete resources like videos or playlists. There is a "search.list" method in Data API but it only allows searching through keywords and returns a list of videos. The analytics API allows viewing statistics, popularity metrics, and demographic information for YouTube videos and channels but this is not quite relevant to the project. 
-							</li>
-							<li>
-								<font size="4">Instagram</font> -  The Instagram API allows searching for photos by hashtags, supports REST request through api.instagram.com endpoint and JSON response and uses OAuth 2.0 protocol for authentication. 
-							</li>
-						</ul>
-					</li>
-					<li>
-						<font size="5">Test Data</font> <br>
+							
+								<h3>Facebook</h3> The Facebook API is a platform for building applications available to the members of this social network. The API allows applications to become more user-centered by publishing activities to news feed and user profile by using social connections and profile information (SUBJECT TO USER PRIVACY SETTINGS). Users can add social context to applications by utilizing profile, friends, page, group, photo and event data. The API uses RESTful protocol and responses are localized in XML format. 
+							
+								<h3>Youtube</h3> The problem with Youtube is it does not have hashtag searching so searches cannot be made on comments or video description. Only the basic keyword youtube search can be done which returns a list of videos with best match. Youtube has two relavant APIs : Data API and Analytics API. The YouTube Data API (v3) lets incorporate YouTube functionality into own application. The API can be used to fetch search results and to retrieve, insert, update, and delete resources like videos or playlists. There is a "search.list" method in Data API but it only allows searching through keywords and returns a list of videos. The analytics API allows viewing statistics, popularity metrics, and demographic information for YouTube videos and channels but this is not quite relevant to the project. 
+							
+								<h3>Instagram</h3> -  The Instagram API allows searching for photos by hashtags, supports REST request through api.instagram.com endpoint and JSON response and uses OAuth 2.0 protocol for authentication. 
+							</ol>
+					
+						<h2>Test Data</h2>
 						To access the Twitter API, an open source python library Tweepy was used. An application on the Twitter Developer website was created to generate the ckey, csecret, atoken and asecret required to achieve Application-only Authentication. The test data includes about 500 tweets about UK rail operators which include @VirginTrains, @LondonMidland,@GNRailUK, @greateranglia, @c2c_Rail, @EMTrains, @chilternrailway, @FGW, @SW_Trains, @TLRailUK, @SouthernRailUK, @Se_Railway.
 	
-					</li>
-					<li>
-						<font size="5">UI Main Page</font> <br>
+					
+						<h2>UI Main Page</h2> 
 						The UI Main Page was developed using a Bootstrap tutorial on Youtube : <a href="https://www.youtube.com/watch?v=YXVoqJEwqoQ"> https://www.youtube.com/watch?v=YXVoqJEwqoQ </a>. Subsequent changes were made to the HTML5 and CSS code to achieve functionalities according to the user requirements. 
 
-					</li>
-					<li>
-						<font size="5">Django</font> - Django is a high level Python Web framework. It helps in building high-performing, elegant Web applications quickly because of focus on automation and DRY (Don't Repeat Yourself) principle. Some interesting Django features are:
+				
+						<h2>Django</h2>
+						Django is a high level Python Web framework. It helps in building high-performing, elegant Web applications quickly because of focus on automation and DRY (Don't Repeat Yourself) principle. Some interesting Django features are:
 						<ul>
-							<li>
-								Object-relational Mapper - Data models are defined completely in Python and there is also a rich, dynamic-database access API.   
-							</li>
-							<li>Elegant URL design - Django provides neatly designed URLs with no framework-specific limitations. 
-							</li>
-							<li>Template system - Django has a powerful, extensible and design-friendly template language to separate design, content and Python code. Data models are defined completely in Python and there is also a rich, dynamic-database access API. 
-							</li>
-							<li>Cache system - Performance is increased by hooking into memcached or other cache frameworks. 
-							</li>
-							<li>Internationalization -Django supports multi-language applications by allowing specification of translation strings and linking language-specific functionalities. 
-							</li>
-							<li>Sites like Instagram, Mozilla, OpenStack, Pinterest, etc. have had tremendous success with Django and the team expects the same with this project as well.
-							</li>
+							<li>Object-relational Mapper - Data models are defined completely in Python and there is also a rich, dynamic-database access API.</li>
+							<li>Elegant URL design - Django provides neatly designed URLs with no framework-specific limitations. </li>
+							<li>Template system - Django has a powerful, extensible and design-friendly template language to separate design, content and Python code. Data models are defined completely in Python and there is also a rich, dynamic-database access API. </li>
+							<li>Cache system - Performance is increased by hooking into memcached or other cache frameworks. </li>
+							<li>Internationalization -Django supports multi-language applications by allowing specification of translation strings and linking language-specific functionalities.</li>
+							<li>Sites like Instagram, Mozilla, OpenStack, Pinterest, etc. have had tremendous success with Django and the team expects the same with this project as well.</li>
 						</ul>
-					</li>
-					<li>
-						<font size="5">Sentiment Analysis</font> - We looked at various API's such as <a href = "https://bigml.com/developers/" target="_blank"> BigML</a>, <a href = "https://cloud.google.com/prediction/docs"  target="_blank"> Google Prediction API</a>, <a href = "https://www.viralheat.com/solutions/social-media-monitoring/"  target="_blank"> ViralHeat</a> etc that would allow us to perform sentiment analysis on a tweet. Some of the API's had to be paid for and some were very complicated to implement and were simply overkill for the task we were trying to complete. We found the perfect balance in <a href = "http://www.datumbox.com/" target="_blank"> DatumBox </a>. It is fully free and open-souce and has a dedicated twitter sentiment analysis API. The API itself was very simple to implement and is also extremely powerful.  
-					</li>
-					<li>
-						<font size="5">PHP</font> - The DatumBox API was available in php and we were very well versed in handling back-end development using php. As we were sure we would be able to finsih the protoype application in time as we did not need to learn anything new or over-complicated we chose it as our primary lanuage for handling all back-end task and to dynamically display data for the application. We have looked at PHP web frameworks such as Laravel. But at this point for the prototype, Laravel would not ease the deployment process nor would it add anything special to the project. So we decided to go with simple and effective php coding without the use of any frameworks.
-					</li>
+					
+						<h2>Sentiment Analysis</h2> 
+						The team looked at various APIs like<a href = "https://bigml.com/developers/" target="_blank"> BigML</a>, <a href = "https://cloud.google.com/prediction/docs"  target="_blank"> Google Prediction API</a>, <a href = "https://www.viralheat.com/solutions/social-media-monitoring/"  target="_blank"> ViralHeat</a> etc that could be used to perform sentiment analysis on tweets. Some of the APIs were not open-source and some were complicated to the extent that limited the team from achieveing protoype completion. A perfect balance was spotted in <a href = "http://www.datumbox.com/" target="_blank">DatumBox</a>. It is open-souce and has a dedicated twitter sentiment analysis API. The API is very simple and extremely powerful to implement. 
+					
+						<h2>PHP</h2> 
+						The DatumBox API is supported to work with PHP and since the team is well known with back-end PHP development, the prototype was finished comfortably well within time. This meant that there was no need to learn a brand new or over-complicated technology stack. Hence the choice of PHP for handling all back-end tasks and to display dynamic data for the application was appropriate. The team also looked at PHP web frameworks such as Laravel but at such a late phase of prototype development Laravel would not have made it easier or added any special features. So the choice of working with simple and effective PHP coding without the use of any frameworks was also appropriate. 
+						<br><br><br><br><br><br>
+					
 				</ol>
-			</p>
-		</div>
 
+		</div>
+	
 
 			
 			
