@@ -20,7 +20,7 @@ $twitter = new TwitterOAuth($consumer, $counsumerSecret, $accessToken, $accessTo
 	<link href  = "../css/styles.css" rel = "stylesheet">
 	</head>
 	<body>
-		<div class = "navbar navbar-default navbar-static-top">
+		<div class = "navbar navbar-inverse navbar-static-top">
 			<div class = "container">
 
 					<a href = "../index.html" class = "navbar-brand" class = "active">
@@ -28,15 +28,14 @@ $twitter = new TwitterOAuth($consumer, $counsumerSecret, $accessToken, $accessTo
 				</a>
 				
 				<a href = "../team.html" class = "navbar-brand" class = "active">Team Presentation</a>
-				<a href = "login.html" class = "navbar-brand" class = "active">Project</a>
-				<a href = "../projectRequirement.html" class = "navbar-brand" class = "active">Requirements & Scope</a>
+				<a href = "index.php" class = "navbar-brand" class = "active">Project</a>
+				<a href = "../projectRequirement.html" class = "navbar-brand" class = "active">Project Requirements & Scope</a>
 				<a href = "../research.html" class = "navbar-brand" class = "active">Research</a>
 				<a href = "../prototypes.html" class = "navbar-brand" class = "active">Prototypes</a>
 				<a href = "../ui.html" class = "navbar-brand" class = "active">UI</a>
 				<a href = "../archive.html" class = "navbar-brand" class = "active">Archive</a>
 				<a href = "../testing.html" class = "navbar-brand" class = "active">Testing</a>
 				<a href = "../plans.html" class = "navbar-brand" class = "active">Plans</a>
-				<a href = "../login.html" class = "navbar-brand" class = "active">Logout</a>
 
 			</div>
 			
@@ -167,7 +166,7 @@ $twitter = new TwitterOAuth($consumer, $counsumerSecret, $accessToken, $accessTo
 			
 
 		</div>
-		<div class = "navbar navbar-default navbar-fixed-bottom" style = "margin-top:5em;">
+		<div class = "navbar navbar-inverse navbar-fixed-bottom" style = "margin-top:5em;">
 			<div class = "container">
 				<p class = "navbar-text pull-left">2014 Developed by ATOS-4 Proud Team<br>All Rights Reserved</p>
 			</div>
