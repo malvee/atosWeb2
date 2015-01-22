@@ -4,8 +4,8 @@
 	ini_set('max_execution_time', 300);
 	include "twitteroauth.php";
 	include "DatumboxAPI.php";
-	session_start();	 
-	$db = new mysqli("localhost", "root", "", "phplogin");
+	session_start();
+	 $db = new mysqli("localhost", "root", "", "phplogin");
 	if (isset($_POST["username"]) && isset($_POST["password"]))
 	{
 		$username = $_POST["username"];
@@ -89,7 +89,7 @@
 							if (isset($t->text))
 							{
 								
-								if ( !isIn( (string)$t->text, $count))
+								if ( !isIn( preg_replace("/(?![:\)\()])\p{P}/u", "", $t->text), $count))
 								{
 									$text =  preg_replace("/(?![:\)\()])\p{P}/u", "", $t->text);
 									$sentiment=$DatumboxAPI->SentimentAnalysis($text);
@@ -100,7 +100,7 @@
   										</tr>";
 					  					$array["text"][$count] = (string) $t->text;
 										$array["sentiment"][$count] = (string) $sentiment;
-										$contains[$count] = (string)$t->text;
+										$contains[$count] = (string)$text;
 										$count++;
 									}
 									else if((string)$sentiment == "negative")
@@ -110,7 +110,7 @@
   										</tr>";
 					  					$array["text"][$count] = (string) $t->text;
 										$array["sentiment"][$count] = (string) $sentiment;
-										$contains[$count] = (string)$t->text;
+										$contains[$count] = (string)$text;
 										$count++;
 									}
 									else if((string)$sentiment == "neutral")
@@ -120,7 +120,7 @@
   										</tr>";
 					  					$array["text"][$count] = (string) $t->text;
 										$array["sentiment"][$count] = (string) $sentiment;
-										$contains[$count] = (string)$t->text;
+										$contains[$count] = (string)$text;
 										$count++;
 									}
 									else
@@ -130,7 +130,7 @@
   										</tr>";
 					  					$array["text"][$count] = (string) $t->text;
 										$array["sentiment"][$count] = "neutral";
-										$contains[$count] = (string)$t->text;
+										$contains[$count] = (string)$text;
 										$count++;
 									}
 									
