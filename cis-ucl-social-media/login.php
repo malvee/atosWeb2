@@ -96,6 +96,8 @@
 									if ((string)$sentiment == "positive")
 									{
 										echo "<tr class = \"success\">
+										<center><td><img src = "$t->user->profile_image_url"></td></center>
+										<center><td>$t->created_at</td></center>
     									<center><td>$t->text</td></center>
   										</tr>";
 					  					$array["text"][$count] = (string) $t->text;
@@ -106,6 +108,8 @@
 									else if((string)$sentiment == "negative")
 									{
 										echo "<tr class = \"danger\">
+										<center><td><img src = "$t->user->profile_image_url"></td></center>
+										<center><td>$t->created_at</td></center>
     									<center><td>$t->text</td></center>
   										</tr>";
 					  					$array["text"][$count] = (string) $t->text;
@@ -116,6 +120,8 @@
 									else if((string)$sentiment == "neutral")
 									{
 										echo "<tr class = \"warning\">
+										<center><td><img src = "$t->user->profile_image_url"></td></center>
+										<center><td>$t->created_at</td></center>
     									<center><td>$t->text</td></center>
   										</tr>";
 					  					$array["text"][$count] = (string) $t->text;
@@ -126,6 +132,8 @@
 									else
 									{
 										echo "<tr class = \"warning\">
+										<center><td><img src = "$t->user->profile_image_url"></td></center>
+										<center><td>$t->created_at</td></center>
     									<center><td>$t->text</td></center>
   										</tr>";
 					  					$array["text"][$count] = (string) $t->text;
