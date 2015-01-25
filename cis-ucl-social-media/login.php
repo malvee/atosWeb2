@@ -1,42 +1,53 @@
 <html>
+
+<head>
+	
+	<title>Twitter Analysis</title>
+	<meta name = "viewport" content = "width= device-width, initial-scale=1.0">
+	<link href  = "../css/bootstrap.min.css" rel = "stylesheet">
+	<link href  = "../css/styles.css" rel = "stylesheet">
+
+</head>
+
 <body>
-<?php
-	ini_set('max_execution_time', 300);
-	include "twitteroauth.php";
-	include "DatumboxAPI.php";
-	session_start();
-	 $db = new mysqli("localhost", "root", "", "phplogin");
-	if (isset($_POST["username"]) && isset($_POST["password"]))
-	{
-		$username = $_POST["username"];
-		$password = $_POST["password"];
-		$result = $db->query("SELECT * FROM users WHERE username = '$username' AND password = '$password'");
-		$ans = $result->fetch_all(MYSQLI_ASSOC);
-		if (count($ans) == 0)
+
+	
+	<?php
+
+		ini_set('max_execution_time', 300);
+		include "twitteroauth.php";
+		include "DatumboxAPI.php";
+		session_start();
+		$db = new mysqli("localhost", "root", "", "phplogin");
+		if (isset($_POST["username"]) && isset($_POST["password"]))
 		{
-			echo "Sorry No match found";
-			$_SESSION["loggedIn"] = 0;
+			$username = $_POST["username"];
+			$password = $_POST["password"];
+			$result = $db->query("SELECT * FROM users WHERE username = '$username' AND password = '$password'");
+			$ans = $result->fetch_all(MYSQLI_ASSOC);
+			if (count($ans) == 0)
+				{
+					echo "Sorry No match found";
+					$_SESSION["loggedIn"] = 0;
+				}
+			else
 		}
-		else
-		{
-			$_SESSION["loggedIn"] = 1;
-			$api_key='ba28ee0ae71432fe85206c36d0e6a641';
-			$consumer = "5blMAfvgOmZBZyfM2usfcX97c";
-			$counsumerSecret = "oYVA9roicxA0nVSX7kXujVnb0Eyn0EFpqy4cSpQ5ZpUyzxeaHQ";
-			$accessToken = "2319828684-dXOy6CW1Mf7nsm32YMbH9qcwMLP8NtetGTxTAbC";
-			$accessTokenSecret = "mp4svtYl7DQAWQmGCBAppHO5aBr8HVmB04T6xU4c7GK8E";
-			$twitter = new TwitterOAuth($consumer, $counsumerSecret, $accessToken, $accessTokenSecret);
-?>
+		$_SESSION["loggedIn"] = 1;
 
-			<title>Twitter Analysis</title>
-			<meta name = "viewport" content = "width= device-width, initial-scale=1.0">
-			<link href  = "../css/bootstrap.min.css" rel = "stylesheet">
-			<link href  = "../css/styles.css" rel = "stylesheet">
+		$api_key='ba28ee0ae71432fe85206c36d0e6a641';
+		$consumer = "5blMAfvgOmZBZyfM2usfcX97c";
+		$counsumerSecret = "oYVA9roicxA0nVSX7kXujVnb0Eyn0EFpqy4cSpQ5ZpUyzxeaHQ";
+		$accessToken = "2319828684-dXOy6CW1Mf7nsm32YMbH9qcwMLP8NtetGTxTAbC";
+		$accessTokenSecret = "mp4svtYl7DQAWQmGCBAppHO5aBr8HVmB04T6xU4c7GK8E";
+		$twitter = new TwitterOAuth($consumer, $counsumerSecret, $accessToken, $accessTokenSecret);
+	?>
+
+			
 			
 			
 
 
-
+			
 			<div class = "container">
 				<div class = "row">
 					<div class = "col-md-3">
