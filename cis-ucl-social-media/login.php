@@ -19,6 +19,13 @@
 		}
 		else
 		{
+			
+			$queryArray = preg_split('/\s+/', trim($ans[0]["query"]));
+			$twitterQueryString = "";
+			foreach($queryArray as $x)
+			{
+				$twitterQueryString .= "%40".$x."%20OR%20"."%23".$x."%20OR%20";
+			}
 			$_SESSION["loggedIn"] = 1;
 			$api_key='ba28ee0ae71432fe85206c36d0e6a641';
 			$consumer = "5blMAfvgOmZBZyfM2usfcX97c";
@@ -63,8 +70,9 @@
 						<table class ="table">
 						<tbody>
 					<?php 
-					$tweets = $twitter -> get("https://api.twitter.com/1.1/search/tweets.json?q=%40VirginTrains%20OR%20%40LondonMidland%20OR%20%40GNRailUK%20OR%20%40greateranglia%20OR%20%40c2c_Rail%20OR%20%40EMTrains%20OR%20%40chilternrailway%20OR%20%40FGW%20OR%20%40SW_Trains%20OR%20%40TLRailUK%20OR%20%40SouthernRailUK%20OR%20%40Se_Railway&result_type=recent&count=30");
-					//print_r($tweets);
+					$twitterQueryString = "https://api.twitter.com/1.1/search/tweets.json?q=".$twitterQueryString."&result_type=recent&count=30";
+					$tweets = $twitter -> get($twitterQueryString);
+					
 					$DatumboxAPI = new DatumboxAPI($api_key);
 					$array = array("text" => array(), "sentiment" => array());
 					$count = 0;
@@ -96,40 +104,56 @@
 									if ((string)$sentiment == "positive")
 									{
 										echo "<tr class = \"success\">
-    									<center><td>$t->text</td></center>
-  										</tr>";
+    									<center><td>$t->text</td></center>"
+    									."<center><td>". "<img src =". $t->user->profile_image_url .">" ."</td></center>"
+    									."<center><td>".$t->created_at."</td></center>"
+  										."</tr>";
 					  					$array["text"][$count] = (string) $t->text;
 										$array["sentiment"][$count] = (string) $sentiment;
+										$array["profile_pic"][$count] = (string) $t->user->profile_image_url;
+										$array["created_at"][$count] = (string) $t->created_at;
 										$contains[$count] = (string)$text;
 										$count++;
 									}
 									else if((string)$sentiment == "negative")
 									{
 										echo "<tr class = \"danger\">
-    									<center><td>$t->text</td></center>
-  										</tr>";
+    									<center><td>$t->text</td></center>"
+    									."<center><td>". "<img src =". $t->user->profile_image_url .">" ."</td></center>"
+    									."<center><td>".$t->created_at."</td></center>"
+  										."</tr>";
 					  					$array["text"][$count] = (string) $t->text;
 										$array["sentiment"][$count] = (string) $sentiment;
+										$array["profile_pic"][$count] = (string) $t->user->profile_image_url;
+										$array["created_at"][$count] = (string) $t->created_at;
 										$contains[$count] = (string)$text;
 										$count++;
 									}
 									else if((string)$sentiment == "neutral")
 									{
 										echo "<tr class = \"warning\">
-    									<center><td>$t->text</td></center>
-  										</tr>";
+    									<center><td>$t->text</td></center>"
+    									."<center><td>". "<img src =". $t->user->profile_image_url .">" ."</td></center>"
+    									."<center><td>".$t->created_at."</td></center>"
+  										."</tr>";
 					  					$array["text"][$count] = (string) $t->text;
 										$array["sentiment"][$count] = (string) $sentiment;
+										$array["profile_pic"][$count] = (string) $t->user->profile_image_url;
+										$array["created_at"][$count] = (string) $t->created_at;
 										$contains[$count] = (string)$text;
 										$count++;
 									}
 									else
 									{
 										echo "<tr class = \"warning\">
-    									<center><td>$t->text</td></center>
-  										</tr>";
+    									<center><td>$t->text</td></center>"
+    									."<center><td>". "<img src =". $t->user->profile_image_url .">" ."</td></center>"
+    									."<center><td>".$t->created_at."</td></center>"
+  										."</tr>";
 					  					$array["text"][$count] = (string) $t->text;
 										$array["sentiment"][$count] = "neutral";
+										$array["profile_pic"][$count] = (string) $t->user->profile_image_url;
+										$array["created_at"][$count] = (string) $t->created_at;
 										$contains[$count] = (string)$text;
 										$count++;
 									}

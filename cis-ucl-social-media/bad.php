@@ -51,8 +51,10 @@ if ($_SESSION["loggedIn"] ==1)
 						{
 
 						echo "<tr class = \"danger\">
-    									<center><td>".(string)$array['text'][$count]."</td></center>
-  										</tr>";
+    <center><td>".(string)$array['text'][$count]."</td></center>"
+    									."<center><td>". "<img src =". (string)$array['profile_pic'][$count] .">" ."</td></center>"
+    									."<center><td>".(string)$array['created_at'][$count]."</td></center>"
+  										."</tr>";
 						}
 						$count++;
 					}
