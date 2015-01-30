@@ -5,7 +5,26 @@
 	include "twitteroauth.php";
 	include "DatumboxAPI.php";
 	session_start();
-	 $db = new mysqli("localhost", "root", "", "phplogin");
+	function addhref($x)
+	{
+		return "<a href=\"" . $x . " \"> " . $x . "</a>" ;
+	}
+	function isLink($x)    // gets a string and prints out the links within it
+	{	
+		$words = explode(" ", $x);
+		$counts = 0;
+		foreach ($words as $word) 
+		{
+			if(strncmp("http://", $word, 7) == 0)
+			{
+				$replacement = array ($counts => addhref($word));
+				$words = array_replace($words, $replacement);
+			}
+			$counts++;
+		}
+		return implode(" ", $words);
+	}
+	$db = new mysqli("localhost", "root", "", "phplogin");
 	if (isset($_POST["username"]) && isset($_POST["password"]))
 	{
 		$username = $_POST["username"];
@@ -104,11 +123,11 @@
 									if ((string)$sentiment == "positive")
 									{
 										echo "<tr class = \"success\">
-    									<center><td>$t->text</td></center>"
+    									<center><td>".isLink((string)$t->text)."</td></center>"
     									."<center><td>". "<img src =". $t->user->profile_image_url .">" ."</td></center>"
     									."<center><td>".$t->created_at."</td></center>"
   										."</tr>";
-					  					$array["text"][$count] = (string) $t->text;
+					  					$array["text"][$count] = (string) isLink((string)$t->text);
 										$array["sentiment"][$count] = (string) $sentiment;
 										$array["profile_pic"][$count] = (string) $t->user->profile_image_url;
 										$array["created_at"][$count] = (string) $t->created_at;
@@ -118,11 +137,11 @@
 									else if((string)$sentiment == "negative")
 									{
 										echo "<tr class = \"danger\">
-    									<center><td>$t->text</td></center>"
+    									<center><td>".islink((string)$t->text)."</td></center>"
     									."<center><td>". "<img src =". $t->user->profile_image_url .">" ."</td></center>"
     									."<center><td>".$t->created_at."</td></center>"
   										."</tr>";
-					  					$array["text"][$count] = (string) $t->text;
+					  					$array["text"][$count] = (string) isLink((string)$t->text);
 										$array["sentiment"][$count] = (string) $sentiment;
 										$array["profile_pic"][$count] = (string) $t->user->profile_image_url;
 										$array["created_at"][$count] = (string) $t->created_at;
@@ -132,11 +151,11 @@
 									else if((string)$sentiment == "neutral")
 									{
 										echo "<tr class = \"warning\">
-    									<center><td>$t->text</td></center>"
+    									<center><td>".islink((string)$t->text)."</td></center>"
     									."<center><td>". "<img src =". $t->user->profile_image_url .">" ."</td></center>"
     									."<center><td>".$t->created_at."</td></center>"
   										."</tr>";
-					  					$array["text"][$count] = (string) $t->text;
+					  					$array["text"][$count] = (string) isLink((string)$t->text);
 										$array["sentiment"][$count] = (string) $sentiment;
 										$array["profile_pic"][$count] = (string) $t->user->profile_image_url;
 										$array["created_at"][$count] = (string) $t->created_at;
@@ -146,11 +165,11 @@
 									else
 									{
 										echo "<tr class = \"warning\">
-    									<center><td>$t->text</td></center>"
+    									<center><td>".isLink((string)$t->text)."</td></center>"
     									."<center><td>". "<img src =". $t->user->profile_image_url .">" ."</td></center>"
     									."<center><td>".$t->created_at."</td></center>"
   										."</tr>";
-					  					$array["text"][$count] = (string) $t->text;
+					  					$array["text"][$count] = (string) isLink((string)$t->text);
 										$array["sentiment"][$count] = "neutral";
 										$array["profile_pic"][$count] = (string) $t->user->profile_image_url;
 										$array["created_at"][$count] = (string) $t->created_at;
