@@ -6,7 +6,7 @@
 	$_GLOBALS["dbArray"] = preg_split('/\s+/', trim($ans[0]["query"]));
 	if(!isset($_POST["array"]) || !isset($_POST["sentText"]) )
 	{
-		echo "<form action = test4.php method = 'POST'>";
+		echo "<form action = test.php method = 'POST'>";
 		foreach($_GLOBALS["dbArray"] as $x)
 		{
 			echo "<input type = 'checkbox' name = 'array[]' value = '$x' checked> $x ";
@@ -15,6 +15,10 @@
 		echo "<input type = 'text' name = 'sentText'>";
 		echo "<input type = 'submit'>"; 
 		echo "</form>";
+		echo "<br>";
+		echo "<form action=\"login.php\">
+    <input type=\"submit\" value=\"Go to App\">
+	</form>";
 
 	}
 	else if ( isset($_POST["array"]))
@@ -36,7 +40,6 @@
 
 		if ( isset($_POST["sentText"])  && (preg_replace('/\s+/', '', $_POST["sentText"]) !== "") )
 		{
-			echo "here";	
 			$sentTextArray = preg_split('/\s+/', trim($_POST["sentText"]));
 			foreach ($sentTextArray as $x)
 			{
@@ -63,7 +66,7 @@
 
 			
 		}
-		echo "<form action = test4.php method = 'POST'>";
+		echo "<form action = test.php method = 'POST'>";
 		foreach($_GLOBALS["dbArray"] as $x)
 		{
 			echo "<input type = 'checkbox' name = 'array[]' value = '$x' checked> $x ";
@@ -72,6 +75,10 @@
 		echo "<input type = 'text' name = 'sentText'>";
 		echo "<input type = 'submit'>"; 
 		echo "</form>";
+		echo "<br>";
+		echo "<form action=\"login.php\">
+    <input type=\"submit\" value=\"Go to App\">
+	</form>";
 	 }
 	 
 	
