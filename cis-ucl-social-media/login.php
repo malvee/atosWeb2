@@ -7,7 +7,7 @@
 	session_start();
 	function addhref($x)
 	{
-		return "<a href=\"" . $x . " \"> " . $x . "</a>" ;
+		return "<a href=\"" . $x . "\" target=\"_blank\" > ". $x . "</a>" ;
 	}
 	function isLink($x)    // gets a string and prints out the links within it
 	{	
